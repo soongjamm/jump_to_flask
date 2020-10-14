@@ -3,7 +3,6 @@
 
 import time
 
-
 def decorate(original_func):
     def wrapper(*args, **kwargs):
         start = time.time()
