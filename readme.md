@@ -14,3 +14,5 @@
 - - flask db migrate - 모델을 신규로 생성하거나 변경할때 사용
 - - flask db upgrade - 변경된 내용을 적용할때 사용
 - - SQLAlchemy docs : https://docs.sqlalchemy.org/en/13/orm/query.html
+
+### https://wikidocs.net/book/4542
