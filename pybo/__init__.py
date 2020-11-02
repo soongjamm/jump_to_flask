@@ -25,4 +25,8 @@ def create_app():
     app.register_blueprint(question_views.bp)
     app.register_blueprint(answer_views.bp)
 
+    # 필터
+    from .filter import format_datetime
+    app.jinja_env.filters['datetime'] = format_datetime # app.jinja_env.filters['datetime'] 처럼 datetime 이라는 이름의 필터로 등록해 주었다. 이제 템플릿에서 |datetime 으로 사용
+
     return app
