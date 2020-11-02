@@ -20,3 +20,7 @@
     * flask db upgrade - 변경된 내용을 적용할때 사용
     * SQLAlchemy docs : https://docs.sqlalchemy.org/en/13/orm/query.html
 
+### frontend
+- static과 templates 폴더는 flask가 앱으로 지정한 모듈 하위에 생성해주면 설정없이 알아서 인식한다.
+- bootstrap은 직접 설치하여 사용하였다.
+    - bootstrap.min.css 파일을 카피하여 스태틱 폴더에 저장
