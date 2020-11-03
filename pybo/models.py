@@ -13,6 +13,7 @@ class Question(db.Model):
     subject = db.Column(db.String(200), nullable=False)
     content = db.Column(db.Text(), nullable=False)
     create_date = db.Column(db.DateTime(), nullable=False)
+    modify_date = db.Column(db.DateTime(), nullable=True)
     user_id = db.Column(
         db.Integer,
         db.ForeignKey("user.id", ondelete="CASCADE"),
@@ -35,6 +36,7 @@ class Answer(db.Model):
     )  # backref 속성은 answer.question.subject 와는 반대로 질문에서 답변모델을 참조하기 위해서 사용되는 속성이다. 중요한 기능
     content = db.Column(db.Text(), nullable=False)
     create_date = db.Column(db.DateTime(), nullable=False)
+    modify_date = db.Column(db.DateTime(), nullable=True)
     user_id = db.Column(
         db.Integer,
         db.ForeignKey("user.id", ondelete="CASCADE"),
