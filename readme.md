@@ -19,6 +19,10 @@
     * flask db migrate - 모델을 신규로 생성하거나 변경할때 사용
     * flask db upgrade - 변경된 내용을 적용할때 사용
     * SQLAlchemy docs : https://docs.sqlalchemy.org/en/13/orm/query.html
+- migrate가 되지 않을 때 상태 진단
+    * flask db heads - migrate 작업의 최종 리비전
+    * flask db current 현재 처리가 완료된 리비전. 위와 일치하지 않을 경우 migrate 수행 불가
+    * flask db stamp heads - 현재의 리비전을 최종 리비전으로 변경
 
 ### frontend
 - static과 templates 폴더는 flask가 앱으로 지정한 모듈 하위에 생성해주면 설정없이 알아서 인식한다.

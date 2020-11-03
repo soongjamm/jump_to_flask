@@ -1,3 +1,5 @@
+import functools
+
 from flask import Blueprint, url_for, render_template, flash, request, session, g
 from werkzeug.security import generate_password_hash, check_password_hash
 from werkzeug.utils import redirect
@@ -7,6 +9,16 @@ from pybo.forms import UserCreateForm, UserLoginForm
 from pybo.models import User
 
 bp = Blueprint("auth", __name__, url_prefix="/auth")
+
+
+def login_required(view):
+    @functools.wraps(view)
+    def wrapped_view(**kwargs):
+        if g.user is None:
+            return redirect(url_for("auth.login"))
+        return view(**kwargs)
+
+    return wrapped_view
 
 
 @bp.route("/signup/", methods=("GET", "POST"))
